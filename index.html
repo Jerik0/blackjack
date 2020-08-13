@@ -9,23 +9,23 @@
   <script defer src="js/main.js"></script>
 </head>
 <body>
-  <h2>Blackjack</h2>
+  <h2>&#x2660; Blackjack &#x2665;</h2>
   <main>
-    <div class="dealer">
-      <section id="dealer-value"></section>
+    <div class="dealer main-item">
+      <section id="dealer-value" class="value"></section>
       <section class="card-container" id="dealer-card-container"></section>
     </div>
-    <div class="middle">
-      <section class="message"></section>
-      <button id="game-button">Start/Reset Game</button>
+    <div class="middle main-item">
+      <section style="visibility: hidden" class="message middle-item">start</section>
+      <button id="game-button" class="middle-item">Start/Reset Game</button>
     </div>
-    <div class="player">
-      <section id="player-value"></section>
+    <div class="player main-item">
+      <section id="player-value" class="value"></section>
       <section class="card-container" id="player-card-container"></section>
-      <div class="actionbuttons">
-        <button id="hit">Hit</button>
-        <button id="stand">Stand</button>
-      </div>
+    </div>
+    <div id="action-buttons" class="main-item">
+      <button id="hit">Hit</button>
+      <button id="stand">Stand</button>
     </div>
   </main>
 </body>

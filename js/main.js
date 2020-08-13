@@ -92,7 +92,7 @@ function handTotal(hand) {
 }
 
 function renderHandValues() {
-  let dealerHandTotal = dealerHand.length === 2 ? dealerHand[0].value : handTotal(dealerHand);
+  let dealerHandTotal = (dealerHand.length === 2 && handTotal(playerHand) <= 21) ? `${dealerHand[0].value} + ?` : handTotal(dealerHand);
   playerValue.innerHTML = `Player hand is ${handTotal(playerHand)}`;
   dealerValue.innerHTML = `Dealer hand is ${dealerHandTotal}`;
 }
@@ -113,7 +113,7 @@ function checkInitialWinner() {
 function gameStart() {
   playerHand = [];
   dealerHand = [];
-  messageBox.innerHTML = '';
+  messageBox.style.visibility = 'hidden';
   enablePlayer();
   createShuffledDeck();
   dealPlayerCards();
@@ -125,6 +125,7 @@ function gameStart() {
 function disablePlayer(message) {
   hitButton.disabled = true;
   standButton.disabled = true;
+  messageBox.style.visibility = 'visible';
   messageBox.innerHTML = message;
 }
 
@@ -181,16 +182,6 @@ function getWinner() {
   }
   showDealerCards();
 }
-
-
-
-/* Ace is equal to 11 unless the total hand is going to bust
-which means, we need the total hand
-
-loop through each hand, if one of the card.value = 11
-check if totalHand is > 21
-keep subtracting 10 as there are aces until handtotal is not bust
- */
 
 /*----- Test Functions -----*/
 // gameStart();
