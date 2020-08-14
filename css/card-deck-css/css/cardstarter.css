@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .card {
   box-sizing: border-box;
-  display: inline-block;
+  /*display: inline-block;*/
   margin: 5px 5px 50px -35px;
   cursor: pointer;
   /* Set the card's dimensions, and size it relative to

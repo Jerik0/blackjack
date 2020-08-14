@@ -15,17 +15,21 @@
       <section id="dealer-value" class="value"></section>
       <section class="card-container" id="dealer-card-container"></section>
     </div>
-    <div class="middle main-item">
-      <section style="visibility: hidden" class="message middle-item">start</section>
-      <button id="game-button" class="middle-item">Start/Reset Game</button>
+    <section style="visibility: hidden" class="message middle-item">start</section>
+    <div class="middle">
+      <div id="interaction-card-container">
+        <section id="player-card-deck" class="card back-blue interaction-card"></section>
+        <img id="restart-icon" class="card-icon" src="css/card-deck-css/images/restart.svg" alt="">
+        <div id="start-card" class="card interaction-card">
+        </div>
+        <img id="hand-icon" class="card-icon" src="css/card-deck-css/images/stop.svg" alt="">
+        <div id="stand-card" class="card interaction-card">
+        </div>
+      </div>
     </div>
     <div class="player main-item">
       <section id="player-value" class="value"></section>
       <section class="card-container" id="player-card-container"></section>
-    </div>
-    <div id="action-buttons" class="main-item">
-      <button id="hit">Hit</button>
-      <button id="stand">Stand</button>
     </div>
   </main>
 </body>

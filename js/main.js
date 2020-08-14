@@ -14,15 +14,19 @@ const playerHandContainer = document.getElementById('player-card-container');
 const dealerHandContainer = document.getElementById('dealer-card-container');
 const playerValue = document.getElementById('player-value');
 const dealerValue = document.getElementById('dealer-value');
-const resetButton = document.getElementById('game-button');
-const standButton = document.getElementById('stand');
-const hitButton = document.getElementById('hit');
+const resetButton = document.getElementById('start-card');
+const standButton = document.getElementById('stand-card');
+const resetIcon = document.getElementById('restart-icon');
+const standCardIcon = document.getElementById('hand-icon');
+const hitButton = document.getElementById('player-card-deck');
 const messageBox = document.querySelector('.message');
 
 /*----- event listeners -----*/
 hitButton.addEventListener('click', playerHit);
 standButton.addEventListener('click', dealerHit);
 resetButton.addEventListener('click', gameStart);
+standCardIcon.addEventListener('click', dealerHit);
+resetIcon.addEventListener('click', gameStart);
 
 /*----- functions -----*/
 function buildMasterDeck() {
@@ -83,7 +87,7 @@ function dealDealerCards() {
 function handTotal(hand) {
   let total = 0;
   hand.forEach(function (card) {
-    if (card.value === 11 && total > 10 && total !== 21 && hand.length > 2) {
+    if (card.value === 11 && total > 10 && total !== 21 && hand.length >= 2) {
       card.value = 1;
     }
     total += card.value
